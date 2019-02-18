@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "# rm(list=ls())\n# \n# datafolder = \"C:/Users/Bar Yokhai/Desktop/stackoverflow/powerapp/\"\n# filename= \"benefice.rds\"\n# pathfilename = paste0(datafolder,filename)\n# benefice = readRDS(file = pathfilename)\n# \n# \n# \n# # parameters functions\n# param_date = \"2016-04-21\"\n# param_central_node = \"r\"\n# param_top_n = 10\n# param_bottom_n = 10\n\n\n\n\n\n# Fonction that build the centralnode df\nbuild_centralnode_df = function(param_central_node,param_top_n,param_bottom_n){\n  \n  solution = benefice[benefice$central_node==param_central_node,]\n  hypest = solution %>%\n    group_by(date) %>%\n    top_n(n = param_top_n, wt = coefficient)\n  hypest <- split( hypest ,f = hypest$date)\n  \n  worst = solution %>%\n    group_by(date) %>%\n    top_n(n = (param_bottom_n)*(-1), wt = coefficient)\n  worst <- split( worst ,f = worst$date)\n  \n  result = list(hypest,worst)\n  names(result) = c(\"hypest\",\"worst\")\n  \n  return(result)\n}\n\n\n\n\n\n\n\n\n\n\n# Fonction that build bubbles\nbuild_bubbles = function(list_of_df,param_date){\n  \n  hypest_tags_df = list_of_df$hypest[[param_date]]\n  worst_tags_df = list_of_df$worst[[param_date]]\n  \n  hypest_bubbles = bubbles(value = hypest_tags_df$coefficient,\n                           label = hypest_tags_df$voisin,\n                           color = hypest_tags_df$tagColor,\n                           key = hypest_tags_df$tagID,\n                           textColor = hypest_tags_df$tagtextColor\n                           )\n  worst_bubbles = bubbles(value = worst_tags_df$coefficient,\n                           label = worst_tags_df$voisin,\n                           color = worst_tags_df$tagColor,\n                           key = worst_tags_df$tagID,\n                          textColor = worst_tags_df$tagtextColor)\n  \n  solution = list(hypest_bubbles,worst_bubbles)\n  names(solution)=c(\"hypest\",\"worst\")\n  return(solution)\n\n}\n\n\n\n# list_of_dataframes = build_centralnode_df(param_central_node = \"ruby\",param_top_n =5 ,param_bottom_n = 10)\n# bubbles = build_bubbles(list_of_dataframes,\"2016-04-21\")\n\n",
+    "created" : 1550411398779.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3236399140",
+    "id" : "EE10A9EE",
+    "lastKnownWriteTime" : 1550412476,
+    "last_content_update" : 1550412476539,
+    "path" : "C:/Users/Bar Yokhai/Desktop/stackoverflow/powerapp/fun.R",
+    "project_path" : "fun.R",
+    "properties" : {
+    },
+    "relative_order" : 3,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

@@ -1,0 +1,13 @@
+name: sovtracker
+title: sovtracker
+username:
+account: snak
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 722793
+bundleId: 1881495
+url: https://snak.shinyapps.io/sovtracker/
+when: 1550456290.033
+asMultiple: FALSE
+asStatic: FALSE
+ignoredFiles: tab1.ai|tab2.ai

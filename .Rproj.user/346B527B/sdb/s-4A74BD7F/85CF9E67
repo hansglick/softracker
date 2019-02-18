@@ -1,0 +1,21 @@
+{
+    "collab_server" : "",
+    "contents" : "shinyServer(function(input, output, session) {\n  \n  # reactive dataframe qui contient les informations du central node selected\n  central_node_df <- reactive({\n    build_centralnode_df(param_central_node = input$selected_central_node,\n                         param_top_n =15,\n                         param_bottom_n = 15)\n  })\n  \n  # List de bubbles reactives\n  bubbles <- reactive ({\n    bubbles = build_bubbles(central_node_df(),input$selected_date_index)\n  })\n  \n  # Le plot bubbles hype\n  output$hypeplot <- renderBubbles({\n    bubbles()$hypest\n  })\n  \n  # # Le plot bubbles worst\n  # output$worstplot <- renderBubbles({\n  #   bubbles()$worst\n  # })\n  \n  # MAJ du slider input date index\n  observeEvent(input$selected_central_node,{\n    ndates = length(unique(benefice$date[benefice$central_node == input$selected_central_node]))\n    updateSliderInput(session, \"selected_date_index\",\n                      value = 1,\n                      min = 1,\n                      max = ndates,\n                      step = 1)\n  })\n  \n  \n  whichdate <-reactive({\n    tempdf = central_node_df()$hype\n    alldates = names(tempdf)\n    solution = alldates[input$selected_date_index]\n    solution\n  })\n  \n  output$datetitle <- renderText({\n    x = paste0(\"Hypest stackoverflow tags associated to the \",input$selected_central_node,\" tag in \", whichdate())\n    x\n  })\n  \n  \n\n  \n  \n})",
+    "created" : 1550409621112.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "4219290457",
+    "id" : "85CF9E67",
+    "lastKnownWriteTime" : 1550428462,
+    "last_content_update" : 1550428462979,
+    "path" : "C:/Users/Bar Yokhai/Desktop/stackoverflow/powerapp/server.R",
+    "project_path" : "server.R",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 2,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "# import data\nbenefice = readRDS(file = \"benefice.rds\")\n\n# central nodes\ncentral_nodes = unique(benefice$central_node)\n\n# les dates\nall_dates = unique(benefice$date)\nall_dates = all_dates[order(all_dates,decreasing = FALSE)]\n\n# startingnode\nstartingnode = \"machine-learning\"",
+    "created" : 1550455064939.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "435480672",
+    "id" : "D8DFF44B",
+    "lastKnownWriteTime" : 1550455089,
+    "last_content_update" : 1550455089043,
+    "path" : "C:/Users/Bar Yokhai/Desktop/stackoverflow/powerapp/loadder.R",
+    "project_path" : "loadder.R",
+    "properties" : {
+    },
+    "relative_order" : 7,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

@@ -1,0 +1,21 @@
+{
+    "collab_server" : "",
+    "contents" : "source(\"config.R\",encoding = \"UTF-8\")\n\nui <- dashboardPage(\n  skin = \"blue\",\n  \n  # le DASHBOARD HEADER\n  dashboardHeader(title = \"\"),\n  \n  \n  # le DASHBOARD SIDEBAR\n  dashboardSidebar(\n    \n    \n    \n    \n    # les options sidebar\n    tags$head(\n      tags$link(rel = \"stylesheet\", type = \"text/css\", href = \"custom.css\")\n    ),\n    tags$script(\"$(document).ready(function(){\n                        setTimeout(function() {$('.slider-animate-button').click()},1000);\n                });\"),\n    \n    \n    \n    \n    sidebarMenu(\n      menuItem(\"Stackoverflow Tech Tracker\", tabName = \"ONGLET_tracker\",icon = icon(\"stack-overflow\")),\n      menuItem(\"What is hype?\", tabName = \"ONGLET_help\", icon = icon(\"question\")),\n      menuItem(\"Github\", tabName = \"ONGLET_github\", icon = icon(\"github\")),\n      \n      \n      #INPUT SELECTOR DE IDs, selected_id\n      selectInput(\n        inputId = \"selected_central_node\",\n        label = \"Tracked tag\", \n        choices = central_nodes,\n        selected = startingnode\n      ),\n      sliderInput(inputId = \"selected_date_index\",\n                  label = \"Evolution over time (animation)\",\n                  min = 1,\n                  max = length(unique(benefice$date[benefice$central_node == startingnode])),\n                  value = 1,\n                  step =1,\n                  animate = animationOptions(interval = 1000, loop = TRUE))\n\n      \n      \n      \n      \n      \n    ) # fin de la sidebar menu\n    \n    \n    \n    \n  ), # fin de la dashboardsidebar\n  \n  \n  \n  \n  \n  # LE DASHBOARD BODY\n  dashboardBody(\n    \n    # Les styles\n\n\n    \n\n    \n    \n    tags$style(type=\"text/css\",\n               \".shiny-output-error { visibility: hidden; }\",\n               \".shiny-output-error:before { visibility: hidden; }\"\n    ),\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    tabItems(\n      \n      \n      \n  \n      \n      \n      \n      # Debut onglet tracker\n      tabItem(\n        tabName = \"ONGLET_tracker\",\n        fluidRow(\n          box(\n            width = 12,\n            status = \"primary\",\n            solidHeader = TRUE,\n            title = textOutput(\"datetitle\"),\n            bubblesOutput(\"hypeplot\", width = \"100%\", height = 500)\n          )\n        )\n      ), # FIN ONGLET tracker\n      \n      \n      \n      \n      \n      # début Onglet help\n      tabItem(\n        tabName = \"ONGLET_help\",\n        fluidRow(\n          box(\n            width = 7,\n            status = \"primary\",\n            solidHeader = TRUE,\n            title = \"StackOverFlow Questions Tags\",\n            includeMarkdown(\"tab1.md\")\n          )\n        ),\n        fluidRow(\n          box(\n            width = 7,\n            status = \"primary\",\n            solidHeader = TRUE,\n            title = \"Hype Definition\",\n            includeMarkdown(\"tab2.md\")\n          )\n        )\n      ), # fin onglet help\n      \n      \n      # Debut onglet github\n      tabItem(\n        tabName = \"ONGLET_github\",\n        fluidRow(\n          box(\n            width = 12,\n            status = \"primary\",\n            solidHeader = TRUE,\n            title = \"Github\",\n            includeMarkdown(\"github.md\")\n          )\n        )\n      ) # FIN ONGLET github\n      \n      \n      \n      \n      \n      \n      \n      \n    ) # fin de tabitems global\n    \n    \n    ) # fin dashboard body\n  \n  \n    ) # fin dashboard page",
+    "created" : 1550497234746.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "515972672",
+    "id" : "64379EEC",
+    "lastKnownWriteTime" : 1550497366,
+    "last_content_update" : 1550497366779,
+    "path" : "C:/Users/Bar Yokhai/Desktop/stackoverflow/powerapp/ui.R",
+    "project_path" : "ui.R",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 9,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}
