@@ -121,7 +121,7 @@ ui <- dashboardPage(
             status = "primary",
             solidHeader = TRUE,
             title = "StackOverFlow Questions Tags",
-            includeMarkdown("tab1.md")
+            includeMarkdown("docs/tab1.md")
           )
         ),
         fluidRow(
@@ -130,7 +130,7 @@ ui <- dashboardPage(
             status = "primary",
             solidHeader = TRUE,
             title = "Hype Definition",
-            includeMarkdown("tab2.md")
+            includeMarkdown("docs/tab2.md")
           )
         )
       ), # fin onglet help
@@ -145,7 +145,7 @@ ui <- dashboardPage(
             status = "primary",
             solidHeader = TRUE,
             title = "Github",
-            includeMarkdown("github.md")
+            includeMarkdown("docs/github.md")
           )
         )
       ) # FIN ONGLET github

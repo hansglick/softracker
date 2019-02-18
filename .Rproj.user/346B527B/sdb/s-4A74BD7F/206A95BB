@@ -1,0 +1,21 @@
+{
+    "collab_server" : "",
+    "contents" : "---\ntitle: \"Stackoverflow Tech Tracker\"\noutput: github_document\n---\n\n## Motivation\n\nLe monde informatique évolue très rapidement. De nouveaux frameworks, langages, librairies, packages naissent chaque jour. Certains meurent aussitôt et d'autres deviennent des incontournables. Nous nous sommes demandés s'il n'était pas possible de  _sentir_ ces nouvelles modes ou grands bouleversements en temps réel.\n\n## Méthode\n\nEn recueillant l'ensemble des question posées sur stackoverflow entre 2009 et 2017, nous avons tracké, semaine après semaine, l'évolution des tags ayant co-occuré avec les 19 tags cibles suivants :\n \n * regex\n * java\n * python\n * ruby\n * javascript\n * computer-vision\n * r\n * iphone\n * objective-c\n * hadoop\n * android\n * scala\n * machine-learning\n * swift\n * apache-spark\n * neural-network\n * nlp\n * tensorflow\n * deep-learning\n\n\n## Métrique \"Hype\"\n\nNous avons ensuite défini une métrique dite \"hype\" censé mesurer la vitesse avec laquelle co-occure un tag avec un des 19 tags cible. Par exemple, le tag _\"tensorflow\"_ commence à apparaître de plus en plus souvent avec le tag cible _\"machine-learning\"_ en février 2016. C'est le début de la popularité de la librairie **tensorflow** dans le domaine du machine learning.\n\n<img src=\"docs/Capture.PNG\" width=\"400\">\n\n\n## Application Shiny\n\nL'application Shiny <https://snak.shinyapps.io/sovtracker/> permet de suivre l'évolution des tags les plus _hype_ entre 2009 et 2017 autour des 19 tags cibles.\n\n<img src=\"docs/shinyscreen.PNG\" width=\"600\">\n\n",
+    "created" : 1550501594949.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2592960775",
+    "id" : "206A95BB",
+    "lastKnownWriteTime" : 1550501604,
+    "last_content_update" : 1550501604026,
+    "path" : "C:/Users/Bar Yokhai/Desktop/stackoverflow/powerapp/README.Rmd",
+    "project_path" : "README.Rmd",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 9,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_markdown"
+}

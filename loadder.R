@@ -1,5 +1,5 @@
 # import data
-benefice = readRDS(file = "benefice.rds")
+benefice = readRDS(file = "data/benefice.rds")
 
 # central nodes
 central_nodes = unique(benefice$central_node)

@@ -36,12 +36,12 @@ En recueillant l'ensemble des question posées sur stackoverflow entre 2009 et 2
 
 Nous avons ensuite défini une métrique dite "hype" censé mesurer la vitesse avec laquelle co-occure un tag avec un des 19 tags cible. Par exemple, le tag _"tensorflow"_ commence à apparaître de plus en plus souvent avec le tag cible _"machine-learning"_ en février 2016. C'est le début de la popularité de la librairie **tensorflow** dans le domaine du machine learning.
 
-<img src="Capture.PNG" width="400">
+<img src="docs/Capture.PNG" width="400">
 
 
 ## Application Shiny
 
 L'application Shiny <https://snak.shinyapps.io/sovtracker/> permet de suivre l'évolution des tags les plus _hype_ entre 2009 et 2017 autour des 19 tags cibles.
 
-<img src="shinyscreen.PNG" width="600">
+<img src="docs/shinyscreen.PNG" width="600">
 

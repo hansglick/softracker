@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "rm(list=ls())\n\nsource(file =\"loadder.R\" ,encoding = \"UTF-8\")\nsource(file =\"packages.R\" ,encoding = \"UTF-8\")\nsource(file =\"fun.R\" ,encoding = \"UTF-8\")",
+    "created" : 1550501518279.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1276204684",
+    "id" : "836246E3",
+    "lastKnownWriteTime" : 1550406534,
+    "last_content_update" : 1550406534,
+    "path" : "C:/Users/Bar Yokhai/Desktop/stackoverflow/powerapp/config.R",
+    "project_path" : "config.R",
+    "properties" : {
+    },
+    "relative_order" : 7,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

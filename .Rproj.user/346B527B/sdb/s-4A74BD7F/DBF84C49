@@ -1,14 +1,14 @@
 {
     "collab_server" : "",
-    "contents" : "rm(list=ls())\n\n# import libraries\nlibrary(RColorBrewer)\n\n\n\n# update benefice.rds table\ndatafolder = \"C:/Users/Bar Yokhai/Desktop/stackoverflow/app/\"\nfilename = \"benefice.rds\"\npathfilename = paste0(datafolder,filename)\nbenefice = readRDS(pathfilename)\n\n\n# Creation de la palette graphique arc-en-ciel\npal <- colorRampPalette(brewer.pal(n = 11, name = \"Spectral\"))\n\n\n# Récupération de tout les tags du monde\ntagsA = unique(benefice$central_node)\ntagsB = unique(benefice$voisin)\ntags=sample(unique(c(tagsA,tagsB)))\n\n\n# Creation des colonnes\ntagID = seq(1,length(tags))\ntagColor = pal(length(tags))\ntagtextColor = rep(\"white\",length(tagColor))\nindex_inf = floor(length(tagColor) / 11) * 3 \nindex_sup = floor(length(tagColor) / 11) * 8 \ntagtextColor[index_inf : index_sup] = \"black\"\n\n\n# Création du dictionnaire des tags\ntags_dic = data.frame(\"tagID\" = tagID,\n                      \"tagColor\" = tagColor,\n                      \"tag\" = tags,\n                      \"tagtextColor\" =tagtextColor, \n                      stringsAsFactors = F)\n\n\n# Merge avec la table bénéfice\nbenefice_new = merge(x = benefice,y = tags_dic, all.x = TRUE, by.x = \"voisin\",by.y = \"tag\")\n\n\n\n# on prend que le top 30 pour l'app\nbenefice_new = benefice_new %>%\n  group_by(central_node,date) %>%\n  top_n(n =30,wt = coefficient)\n\n\n# save le RDS\nfoldername = \"C:/Users/Bar Yokhai/Desktop/stackoverflow/powerapp/\"\npathfilename = paste0(foldername,\"benefice.rds\")\nsaveRDS(object = benefice_new,file = pathfilename)\n",
+    "contents" : "rm(list=ls())\n\n# import libraries\nlibrary(RColorBrewer)\n\n\n\n# update benefice.rds table\ndatafolder = \"C:/Users/Bar Yokhai/Desktop/stackoverflow/app/\"\nfilename = \"benefice.rds\"\npathfilename = paste0(datafolder,filename)\nbenefice = readRDS(pathfilename)\n\n\n# Creation de la palette graphique arc-en-ciel\npal <- colorRampPalette(brewer.pal(n = 11, name = \"Spectral\"))\n\n\n# Récupération de tout les tags du monde\ntagsA = unique(benefice$central_node)\ntagsB = unique(benefice$voisin)\ntags=sample(unique(c(tagsA,tagsB)))\n\n\n# Creation des colonnes\ntagID = seq(1,length(tags))\ntagColor = pal(length(tags))\ntagtextColor = rep(\"white\",length(tagColor))\nindex_inf = floor(length(tagColor) / 11) * 3 \nindex_sup = floor(length(tagColor) / 11) * 8 \ntagtextColor[index_inf : index_sup] = \"black\"\n\n\n# Création du dictionnaire des tags\ntags_dic = data.frame(\"tagID\" = tagID,\n                      \"tagColor\" = tagColor,\n                      \"tag\" = tags,\n                      \"tagtextColor\" =tagtextColor, \n                      stringsAsFactors = F)\n\n\n# Merge avec la table bénéfice\nbenefice_new = merge(x = benefice,y = tags_dic, all.x = TRUE, by.x = \"voisin\",by.y = \"tag\")\n\n\n\n# on prend que le top 30 pour l'app\nbenefice_new = benefice_new %>%\n  group_by(central_node,date) %>%\n  top_n(n =30,wt = coefficient)\n\n\n# save le RDS\nfoldername = \"C:/Users/Bar Yokhai/Desktop/stackoverflow/powerapp/docs/\"\npathfilename = paste0(foldername,\"benefice.rds\")\nsaveRDS(object = benefice_new,file = pathfilename)\n",
     "created" : 1550432941085.000,
     "dirty" : false,
     "encoding" : "UTF-8",
     "folds" : "",
-    "hash" : "4199311858",
+    "hash" : "1050606325",
     "id" : "DBF84C49",
-    "lastKnownWriteTime" : 1550433568,
-    "last_content_update" : 1550433568698,
+    "lastKnownWriteTime" : 1550501384,
+    "last_content_update" : 1550501384438,
     "path" : "C:/Users/Bar Yokhai/Desktop/stackoverflow/powerapp/build_data.R",
     "project_path" : "build_data.R",
     "properties" : {

@@ -51,6 +51,6 @@ benefice_new = benefice_new %>%
 
 
 # save le RDS
-foldername = "C:/Users/Bar Yokhai/Desktop/stackoverflow/powerapp/"
+foldername = "C:/Users/Bar Yokhai/Desktop/stackoverflow/powerapp/docs/"
 pathfilename = paste0(foldername,"benefice.rds")
 saveRDS(object = benefice_new,file = pathfilename)
