@@ -43,4 +43,3 @@ Application Shiny
 
 L'application Shiny <https://snak.shinyapps.io/sovtracker/> permet de suivre l'évolution des tags les plus *hype* entre 2009 et 2017 autour des 19 tags cibles.
 
-<img src="docs/shinyscreen.PNG" width="600">
